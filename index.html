@@ -14,6 +14,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
         .container {
@@ -23,6 +39,7 @@
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             max-width: 500px;
+            animation: float 3s ease-in-out infinite;
         }
         
         h1 {
@@ -52,11 +69,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
         }
         
         .badge:hover {
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.1);
+            animation-play-state: paused;
         }
     </style>
 </head>
